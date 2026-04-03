@@ -138,12 +138,6 @@ Seleciona qual operação será executada baseado em linhas de seleção.
 ### Display de 7 Segmentos
 Converte resultado binário para visualização em display de 7 segmentos.
 
-## 📚 Referências
-
-- [Intel Quartus Prime Documentation](https://www.altera.com/content/dam/altera-www/global/en_US/pdfs/literature/ug/ug_intro.pdf)
-- [Cyclone V Device Family Datasheet](https://www.intel.com/content/dam/altera-www/global/en_US/pdfs/literature/hb/cyclone-v/cv_51001.pdf)
-- Lógica Digital e Circuitos - Conceitos Fundamentais
-
 ## 📄 Licença
 
 Este projeto segue a licença Intel FPGA fornecida com o Quartus Prime.
@@ -287,12 +281,6 @@ Selects which operation will be executed based on selection lines.
 
 ### 7-Segment Display
 Converts binary result to 7-segment display visualization.
-
-## 📚 References
-
-- [Intel Quartus Prime Documentation](https://www.altera.com/content/dam/altera-www/global/en_US/pdfs/literature/ug/ug_intro.pdf)
-- [Cyclone V Device Family Datasheet](https://www.intel.com/content/dam/altera-www/global/en_US/pdfs/literature/hb/cyclone-v/cv_51001.pdf)
-- Digital Logic and Circuits - Fundamental Concepts
 
 ## 📄 License
 
