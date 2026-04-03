@@ -1,0 +1,616 @@
+Analysis & Synthesis report for alu
+Wed Jan 29 16:00:16 2025
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: AluFinal:inst|Compa2Final:inst2|compa2:inst|LPM_CONSTANT:inst567
+ 10. Parameter Settings for User Entity Instance: AluFinal:inst|Alu_Adder:inst|alu:inst|compa2:inst|LPM_CONSTANT:inst567
+ 11. Parameter Settings for User Entity Instance: AluFinal:inst|Alu_Adder:inst|alu:inst|compa2:inst3|LPM_CONSTANT:inst567
+ 12. Parameter Settings for User Entity Instance: AluFinal:inst|Alu_Adder:inst|alu:inst|Compa24bits:inst5|LPM_CONSTANT:inst567
+ 13. Parameter Settings for User Entity Instance: AluFinal:inst|Subtrator:inst10|alu:inst|compa2:inst|LPM_CONSTANT:inst567
+ 14. Parameter Settings for User Entity Instance: AluFinal:inst|Subtrator:inst10|alu:inst|compa2:inst3|LPM_CONSTANT:inst567
+ 15. Parameter Settings for User Entity Instance: AluFinal:inst|Subtrator:inst10|alu:inst|Compa24bits:inst5|LPM_CONSTANT:inst567
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Wed Jan 29 16:00:16 2025       ;
+; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                   ; alu                                         ;
+; Top-level Entity Name           ; CircuitoFinal                               ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 0                                           ;
+; Total pins                      ; 81                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSXFC6D6F31C6     ;                    ;
+; Top-level entity name                                                           ; CircuitoFinal      ; alu                ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                           ;
++-----------------------------------------------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                                      ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                            ; Library ;
++-----------------------------------------------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------+---------+
+; display.bdf                                                           ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/display.bdf                    ;         ;
+; 7Segmentos5bits.bdf                                                   ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/7Segmentos5bits.bdf            ;         ;
+; 7Segmentos4bits.bdf                                                   ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/7Segmentos4bits.bdf            ;         ;
+; 7Segmentos-2.bdf                                                      ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/7Segmentos-2.bdf               ;         ;
+; MuxBool.bdf                                                           ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/MuxBool.bdf                    ;         ;
+; Mux1bit.bdf                                                           ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/Mux1bit.bdf                    ;         ;
+; COMPARADORPROJETO.bdf                                                 ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/COMPARADORPROJETO.bdf          ;         ;
+; COMPARADOR.bdf                                                        ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/COMPARADOR.bdf                 ;         ;
+; Block7.bdf                                                            ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/Block7.bdf                     ;         ;
+; ALU_BOOL.bdf                                                          ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/ALU_BOOL.bdf                   ;         ;
+; ANDbitabit.bdf                                                        ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/ANDbitabit.bdf                 ;         ;
+; Xorbitabit.bdf                                                        ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/Xorbitabit.bdf                 ;         ;
+; fulladder.bdf                                                         ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/fulladder.bdf                  ;         ;
+; adder5bits.bdf                                                        ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/adder5bits.bdf                 ;         ;
+; compa2.bdf                                                            ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/compa2.bdf                     ;         ;
+; not5.bdf                                                              ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/not5.bdf                       ;         ;
+; adder4bits.bdf                                                        ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/adder4bits.bdf                 ;         ;
+; Mux4bits.bdf                                                          ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/Mux4bits.bdf                   ;         ;
+; alu.bdf                                                               ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/alu.bdf                        ;         ;
+; DecoderSinal.bdf                                                      ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/DecoderSinal.bdf               ;         ;
+; Compa24bits.bdf                                                       ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/Compa24bits.bdf                ;         ;
+; Subtrator.bdf                                                         ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/Subtrator.bdf                  ;         ;
+; inversorsinal.bdf                                                     ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/inversorsinal.bdf              ;         ;
+; Mux6bits.bdf                                                          ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/Mux6bits.bdf                   ;         ;
+; Mux_ALu.bdf                                                           ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/Mux_ALu.bdf                    ;         ;
+; AluFinal.bdf                                                          ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/AluFinal.bdf                   ;         ;
+; Alu_Adder.bdf                                                         ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/Alu_Adder.bdf                  ;         ;
+; Compa2Final.bdf                                                       ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/Compa2Final.bdf                ;         ;
+; CircuitoFinal.bdf                                                     ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/CircuitoFinal.bdf              ;         ;
+; Corretor_0.bdf                                                        ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/Corretor_0.bdf                 ;         ;
+; CorretorZero.bdf                                                      ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/CorretorZero.bdf               ;         ;
+; CorretorZeroCompact.bdf                                               ; yes             ; User Block Diagram/Schematic File  ; C:/users/steamuser/Documents/projeto-alu/CorretorZeroCompact.bdf        ;         ;
+; lpm_constant.tdf                                                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_constant.tdf ;         ;
+; /intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_constant.tdf ; yes             ; Other                              ; /intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_constant.tdf   ;         ;
++-----------------------------------------------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                              ;
++---------------------------------------------+----------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                      ;
++---------------------------------------------+----------------------------------------------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 60                                                                         ;
+;                                             ;                                                                            ;
+; Combinational ALUT usage for logic          ; 84                                                                         ;
+;     -- 7 input functions                    ; 3                                                                          ;
+;     -- 6 input functions                    ; 32                                                                         ;
+;     -- 5 input functions                    ; 13                                                                         ;
+;     -- 4 input functions                    ; 23                                                                         ;
+;     -- <=3 input functions                  ; 13                                                                         ;
+;                                             ;                                                                            ;
+; Dedicated logic registers                   ; 0                                                                          ;
+;                                             ;                                                                            ;
+; I/O pins                                    ; 81                                                                         ;
+;                                             ;                                                                            ;
+; Total DSP Blocks                            ; 0                                                                          ;
+;                                             ;                                                                            ;
+; Maximum fan-out node                        ; AluFinal:inst|ALU_BOOL:inst1|COMPARADORPROJETO:inst|Corretor_0:inst6|inst1 ;
+; Maximum fan-out                             ; 24                                                                         ;
+; Total fan-out                               ; 546                                                                        ;
+; Average fan-out                             ; 2.22                                                                       ;
++---------------------------------------------+----------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                        ;
++-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node          ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                      ; Entity Name       ; Library Name ;
++-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------+-------------------+--------------+
+; |CircuitoFinal                      ; 84 (0)              ; 0 (0)                     ; 0                 ; 0          ; 81   ; 0            ; |CircuitoFinal                                                                                           ; CircuitoFinal     ; work         ;
+;    |7Segmentos4bits:inst1|          ; 9 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|7Segmentos4bits:inst1                                                                     ; 7Segmentos4bits   ; work         ;
+;       |7Segmentos-2:inst|           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|7Segmentos4bits:inst1|7Segmentos-2:inst                                                   ; 7Segmentos-2      ; work         ;
+;       |display:inst2|               ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|7Segmentos4bits:inst1|display:inst2                                                       ; display           ; work         ;
+;    |7Segmentos4bits:inst2|          ; 9 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|7Segmentos4bits:inst2                                                                     ; 7Segmentos4bits   ; work         ;
+;       |7Segmentos-2:inst|           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|7Segmentos4bits:inst2|7Segmentos-2:inst                                                   ; 7Segmentos-2      ; work         ;
+;       |display:inst2|               ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|7Segmentos4bits:inst2|display:inst2                                                       ; display           ; work         ;
+;    |7Segmentos5bits:inst3|          ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|7Segmentos5bits:inst3                                                                     ; 7Segmentos5bits   ; work         ;
+;       |7Segmentos-2:inst|           ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|7Segmentos5bits:inst3|7Segmentos-2:inst                                                   ; 7Segmentos-2      ; work         ;
+;       |display:inst2|               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|7Segmentos5bits:inst3|display:inst2                                                       ; display           ; work         ;
+;    |AluFinal:inst|                  ; 54 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst                                                                             ; AluFinal          ; work         ;
+;       |ALU_BOOL:inst1|              ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|ALU_BOOL:inst1                                                              ; ALU_BOOL          ; work         ;
+;          |COMPARADORPROJETO:inst|   ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|ALU_BOOL:inst1|COMPARADORPROJETO:inst                                       ; COMPARADORPROJETO ; work         ;
+;             |COMPARADOR:inst|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|ALU_BOOL:inst1|COMPARADORPROJETO:inst|COMPARADOR:inst                       ; COMPARADOR        ; work         ;
+;             |Corretor_0:inst5|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|ALU_BOOL:inst1|COMPARADORPROJETO:inst|Corretor_0:inst5                      ; Corretor_0        ; work         ;
+;             |Corretor_0:inst6|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|ALU_BOOL:inst1|COMPARADORPROJETO:inst|Corretor_0:inst6                      ; Corretor_0        ; work         ;
+;          |MuxBool:inst2|            ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|ALU_BOOL:inst1|MuxBool:inst2                                                ; MuxBool           ; work         ;
+;       |Alu_Adder:inst|              ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Alu_Adder:inst                                                              ; Alu_Adder         ; work         ;
+;          |alu:inst|                 ; 11 (1)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Alu_Adder:inst|alu:inst                                                     ; alu               ; work         ;
+;             |Compa24bits:inst5|     ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Alu_Adder:inst|alu:inst|Compa24bits:inst5                                   ; Compa24bits       ; work         ;
+;                |adder4bits:inst|    ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Alu_Adder:inst|alu:inst|Compa24bits:inst5|adder4bits:inst                   ; adder4bits        ; work         ;
+;                   |fulladder:inst2| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Alu_Adder:inst|alu:inst|Compa24bits:inst5|adder4bits:inst|fulladder:inst2   ; fulladder         ; work         ;
+;             |DecoderSinal:inst4|    ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Alu_Adder:inst|alu:inst|DecoderSinal:inst4                                  ; DecoderSinal      ; work         ;
+;                |Mux1bit:inst8|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Alu_Adder:inst|alu:inst|DecoderSinal:inst4|Mux1bit:inst8                    ; Mux1bit           ; work         ;
+;             |Mux4bits:inst123|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Alu_Adder:inst|alu:inst|Mux4bits:inst123                                    ; Mux4bits          ; work         ;
+;             |Mux4bits:inst7|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Alu_Adder:inst|alu:inst|Mux4bits:inst7                                      ; Mux4bits          ; work         ;
+;             |adder4bits:inst24|     ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Alu_Adder:inst|alu:inst|adder4bits:inst24                                   ; adder4bits        ; work         ;
+;                |fulladder:inst1|    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Alu_Adder:inst|alu:inst|adder4bits:inst24|fulladder:inst1                   ; fulladder         ; work         ;
+;                |fulladder:inst2|    ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Alu_Adder:inst|alu:inst|adder4bits:inst24|fulladder:inst2                   ; fulladder         ; work         ;
+;                |fulladder:inst4|    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Alu_Adder:inst|alu:inst|adder4bits:inst24|fulladder:inst4                   ; fulladder         ; work         ;
+;             |compa2:inst3|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Alu_Adder:inst|alu:inst|compa2:inst3                                        ; compa2            ; work         ;
+;                |adder5bits:inst2|   ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Alu_Adder:inst|alu:inst|compa2:inst3|adder5bits:inst2                       ; adder5bits        ; work         ;
+;                   |fulladder:inst2| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Alu_Adder:inst|alu:inst|compa2:inst3|adder5bits:inst2|fulladder:inst2       ; fulladder         ; work         ;
+;             |compa2:inst|           ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Alu_Adder:inst|alu:inst|compa2:inst                                         ; compa2            ; work         ;
+;                |adder5bits:inst2|   ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Alu_Adder:inst|alu:inst|compa2:inst|adder5bits:inst2                        ; adder5bits        ; work         ;
+;                   |fulladder:inst2| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Alu_Adder:inst|alu:inst|compa2:inst|adder5bits:inst2|fulladder:inst2        ; fulladder         ; work         ;
+;       |Mux_ALu:inst7|               ; 22 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Mux_ALu:inst7                                                               ; Mux_ALu           ; work         ;
+;          |Mux6bits:inst1|           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Mux_ALu:inst7|Mux6bits:inst1                                                ; Mux6bits          ; work         ;
+;          |Mux6bits:inst2|           ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Mux_ALu:inst7|Mux6bits:inst2                                                ; Mux6bits          ; work         ;
+;          |Mux6bits:inst3|           ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Mux_ALu:inst7|Mux6bits:inst3                                                ; Mux6bits          ; work         ;
+;          |Mux6bits:inst4|           ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Mux_ALu:inst7|Mux6bits:inst4                                                ; Mux6bits          ; work         ;
+;          |Mux6bits:inst5|           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Mux_ALu:inst7|Mux6bits:inst5                                                ; Mux6bits          ; work         ;
+;          |Mux6bits:inst|            ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Mux_ALu:inst7|Mux6bits:inst                                                 ; Mux6bits          ; work         ;
+;       |Subtrator:inst10|            ; 9 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Subtrator:inst10                                                            ; Subtrator         ; work         ;
+;          |alu:inst|                 ; 9 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Subtrator:inst10|alu:inst                                                   ; alu               ; work         ;
+;             |Compa24bits:inst5|     ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Subtrator:inst10|alu:inst|Compa24bits:inst5                                 ; Compa24bits       ; work         ;
+;                |adder4bits:inst|    ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Subtrator:inst10|alu:inst|Compa24bits:inst5|adder4bits:inst                 ; adder4bits        ; work         ;
+;                   |fulladder:inst2| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Subtrator:inst10|alu:inst|Compa24bits:inst5|adder4bits:inst|fulladder:inst2 ; fulladder         ; work         ;
+;             |DecoderSinal:inst4|    ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Subtrator:inst10|alu:inst|DecoderSinal:inst4                                ; DecoderSinal      ; work         ;
+;                |Mux1bit:inst8|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Subtrator:inst10|alu:inst|DecoderSinal:inst4|Mux1bit:inst8                  ; Mux1bit           ; work         ;
+;             |Mux4bits:inst123|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Subtrator:inst10|alu:inst|Mux4bits:inst123                                  ; Mux4bits          ; work         ;
+;             |Mux4bits:inst7|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Subtrator:inst10|alu:inst|Mux4bits:inst7                                    ; Mux4bits          ; work         ;
+;             |adder4bits:inst24|     ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Subtrator:inst10|alu:inst|adder4bits:inst24                                 ; adder4bits        ; work         ;
+;                |fulladder:inst1|    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Subtrator:inst10|alu:inst|adder4bits:inst24|fulladder:inst1                 ; fulladder         ; work         ;
+;                |fulladder:inst2|    ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Subtrator:inst10|alu:inst|adder4bits:inst24|fulladder:inst2                 ; fulladder         ; work         ;
+;                |fulladder:inst4|    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CircuitoFinal|AluFinal:inst|Subtrator:inst10|alu:inst|adder4bits:inst24|fulladder:inst4                 ; fulladder         ; work         ;
++-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------+-------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: AluFinal:inst|Compa2Final:inst2|compa2:inst|LPM_CONSTANT:inst567 ;
++--------------------+------------------+-----------------------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                                  ;
++--------------------+------------------+-----------------------------------------------------------------------+
+; LPM_WIDTH          ; 5                ; Signed Integer                                                        ;
+; LPM_CVALUE         ; 1                ; Unsigned Binary                                                       ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                               ;
+; CBXI_PARAMETER     ; lpm_constant_h84 ; Untyped                                                               ;
++--------------------+------------------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: AluFinal:inst|Alu_Adder:inst|alu:inst|compa2:inst|LPM_CONSTANT:inst567 ;
++--------------------+------------------+-----------------------------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                                        ;
++--------------------+------------------+-----------------------------------------------------------------------------+
+; LPM_WIDTH          ; 5                ; Signed Integer                                                              ;
+; LPM_CVALUE         ; 1                ; Unsigned Binary                                                             ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                                     ;
+; CBXI_PARAMETER     ; lpm_constant_h84 ; Untyped                                                                     ;
++--------------------+------------------+-----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: AluFinal:inst|Alu_Adder:inst|alu:inst|compa2:inst3|LPM_CONSTANT:inst567 ;
++--------------------+------------------+------------------------------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                                         ;
++--------------------+------------------+------------------------------------------------------------------------------+
+; LPM_WIDTH          ; 5                ; Signed Integer                                                               ;
+; LPM_CVALUE         ; 1                ; Unsigned Binary                                                              ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                                      ;
+; CBXI_PARAMETER     ; lpm_constant_h84 ; Untyped                                                                      ;
++--------------------+------------------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: AluFinal:inst|Alu_Adder:inst|alu:inst|Compa24bits:inst5|LPM_CONSTANT:inst567 ;
++--------------------+------------------+-----------------------------------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                                              ;
++--------------------+------------------+-----------------------------------------------------------------------------------+
+; LPM_WIDTH          ; 4                ; Signed Integer                                                                    ;
+; LPM_CVALUE         ; 1                ; Unsigned Binary                                                                   ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                                           ;
+; CBXI_PARAMETER     ; lpm_constant_074 ; Untyped                                                                           ;
++--------------------+------------------+-----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: AluFinal:inst|Subtrator:inst10|alu:inst|compa2:inst|LPM_CONSTANT:inst567 ;
++--------------------+------------------+-------------------------------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                                          ;
++--------------------+------------------+-------------------------------------------------------------------------------+
+; LPM_WIDTH          ; 5                ; Signed Integer                                                                ;
+; LPM_CVALUE         ; 1                ; Unsigned Binary                                                               ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                                       ;
+; CBXI_PARAMETER     ; lpm_constant_h84 ; Untyped                                                                       ;
++--------------------+------------------+-------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: AluFinal:inst|Subtrator:inst10|alu:inst|compa2:inst3|LPM_CONSTANT:inst567 ;
++--------------------+------------------+--------------------------------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                                           ;
++--------------------+------------------+--------------------------------------------------------------------------------+
+; LPM_WIDTH          ; 5                ; Signed Integer                                                                 ;
+; LPM_CVALUE         ; 1                ; Unsigned Binary                                                                ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                                        ;
+; CBXI_PARAMETER     ; lpm_constant_h84 ; Untyped                                                                        ;
++--------------------+------------------+--------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: AluFinal:inst|Subtrator:inst10|alu:inst|Compa24bits:inst5|LPM_CONSTANT:inst567 ;
++--------------------+------------------+-------------------------------------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                                                ;
++--------------------+------------------+-------------------------------------------------------------------------------------+
+; LPM_WIDTH          ; 4                ; Signed Integer                                                                      ;
+; LPM_CVALUE         ; 1                ; Unsigned Binary                                                                     ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                                             ;
+; CBXI_PARAMETER     ; lpm_constant_074 ; Untyped                                                                             ;
++--------------------+------------------+-------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_lcell_comb     ; 109                         ;
+;     extend            ; 3                           ;
+;         7 data inputs ; 3                           ;
+;     normal            ; 106                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 23                          ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 8                           ;
+;         4 data inputs ; 23                          ;
+;         5 data inputs ; 13                          ;
+;         6 data inputs ; 32                          ;
+; boundary_port         ; 81                          ;
+;                       ;                             ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 4.53                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Wed Jan 29 16:00:07 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off alu -c alu
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file mux_menor.bdf
+    Info (12023): Found entity 1: mux_menor
+Info (12021): Found 1 design units, including 1 entities, in source file mux_final.bdf
+    Info (12023): Found entity 1: MUX_FINAL
+Info (12021): Found 1 design units, including 1 entities, in source file display.bdf
+    Info (12023): Found entity 1: display
+Info (12021): Found 1 design units, including 1 entities, in source file alura_final.bdf
+    Info (12023): Found entity 1: alura_final
+Info (12021): Found 1 design units, including 1 entities, in source file 7segmentos5bits.bdf
+    Info (12023): Found entity 1: 7Segmentos5bits
+Info (12021): Found 1 design units, including 1 entities, in source file 7segmentos4bits.bdf
+    Info (12023): Found entity 1: 7Segmentos4bits
+Info (12021): Found 1 design units, including 1 entities, in source file 7segmentos-2.bdf
+    Info (12023): Found entity 1: 7Segmentos-2
+Info (12021): Found 1 design units, including 1 entities, in source file somador.bdf
+    Info (12023): Found entity 1: somador
+Info (12021): Found 1 design units, including 1 entities, in source file block2.bdf
+    Info (12023): Found entity 1: Block2
+Info (12021): Found 1 design units, including 1 entities, in source file teste.bdf
+    Info (12023): Found entity 1: teste
+Info (12021): Found 1 design units, including 1 entities, in source file muxbool.bdf
+    Info (12023): Found entity 1: MuxBool
+Info (12021): Found 1 design units, including 1 entities, in source file mux1bit.bdf
+    Info (12023): Found entity 1: Mux1bit
+Info (12021): Found 1 design units, including 1 entities, in source file comparadorprojeto.bdf
+    Info (12023): Found entity 1: COMPARADORPROJETO
+Info (12021): Found 1 design units, including 1 entities, in source file comparador.bdf
+    Info (12023): Found entity 1: COMPARADOR
+Info (12021): Found 1 design units, including 1 entities, in source file block7.bdf
+    Info (12023): Found entity 1: Block7
+Info (12021): Found 1 design units, including 1 entities, in source file alu_bool.bdf
+    Info (12023): Found entity 1: ALU_BOOL
+Info (12021): Found 1 design units, including 1 entities, in source file andbitabit.bdf
+    Info (12023): Found entity 1: ANDbitabit
+Info (12021): Found 1 design units, including 1 entities, in source file xorbitabit.bdf
+    Info (12023): Found entity 1: Xorbitabit
+Info (12021): Found 1 design units, including 1 entities, in source file fulladder.bdf
+    Info (12023): Found entity 1: fulladder
+Info (12021): Found 1 design units, including 1 entities, in source file adder5bits.bdf
+    Info (12023): Found entity 1: adder5bits
+Info (12021): Found 1 design units, including 1 entities, in source file compa2.bdf
+    Info (12023): Found entity 1: compa2
+Info (12021): Found 1 design units, including 1 entities, in source file not5.bdf
+    Info (12023): Found entity 1: not5
+Info (12021): Found 1 design units, including 1 entities, in source file const1.bdf
+    Info (12023): Found entity 1: const1
+Info (12021): Found 1 design units, including 1 entities, in source file adder4bits.bdf
+    Info (12023): Found entity 1: adder4bits
+Info (12021): Found 1 design units, including 1 entities, in source file mux4bits.bdf
+    Info (12023): Found entity 1: Mux4bits
+Info (12021): Found 1 design units, including 1 entities, in source file alu.bdf
+    Info (12023): Found entity 1: alu
+Info (12021): Found 1 design units, including 1 entities, in source file principaladder.bdf
+    Info (12023): Found entity 1: PrincipalAdder
+Info (12021): Found 1 design units, including 1 entities, in source file decodersinal.bdf
+    Info (12023): Found entity 1: DecoderSinal
+Info (12021): Found 1 design units, including 1 entities, in source file compa24bits.bdf
+    Info (12023): Found entity 1: Compa24bits
+Info (12021): Found 1 design units, including 1 entities, in source file teste2.bdf
+    Info (12023): Found entity 1: teste2
+Info (12021): Found 1 design units, including 1 entities, in source file subtrator.bdf
+    Info (12023): Found entity 1: Subtrator
+Info (12021): Found 1 design units, including 1 entities, in source file inversorsinal.bdf
+    Info (12023): Found entity 1: inversorsinal
+Info (12021): Found 1 design units, including 1 entities, in source file mux6bits.bdf
+    Info (12023): Found entity 1: Mux6bits
+Info (12021): Found 1 design units, including 1 entities, in source file mux_alu.bdf
+    Info (12023): Found entity 1: Mux_ALu
+Info (12021): Found 1 design units, including 1 entities, in source file alufinal.bdf
+    Info (12023): Found entity 1: AluFinal
+Info (12021): Found 1 design units, including 1 entities, in source file alu_adder.bdf
+    Info (12023): Found entity 1: Alu_Adder
+Info (12021): Found 1 design units, including 1 entities, in source file compa2final.bdf
+    Info (12023): Found entity 1: Compa2Final
+Info (12021): Found 1 design units, including 1 entities, in source file circuitofinal.bdf
+    Info (12023): Found entity 1: CircuitoFinal
+Info (12021): Found 1 design units, including 1 entities, in source file corretor_0.bdf
+    Info (12023): Found entity 1: Corretor_0
+Info (12021): Found 1 design units, including 1 entities, in source file constante.bdf
+    Info (12023): Found entity 1: constante
+Info (12021): Found 1 design units, including 1 entities, in source file corretorzero.bdf
+    Info (12023): Found entity 1: CorretorZero
+Info (12021): Found 1 design units, including 1 entities, in source file corretorzerocompact.bdf
+    Info (12023): Found entity 1: CorretorZeroCompact
+Info (12127): Elaborating entity "CircuitoFinal" for the top level hierarchy
+Info (12128): Elaborating entity "AluFinal" for hierarchy "AluFinal:inst"
+Info (12128): Elaborating entity "ALU_BOOL" for hierarchy "AluFinal:inst|ALU_BOOL:inst1"
+Info (12128): Elaborating entity "MuxBool" for hierarchy "AluFinal:inst|ALU_BOOL:inst1|MuxBool:inst2"
+Info (12128): Elaborating entity "COMPARADORPROJETO" for hierarchy "AluFinal:inst|ALU_BOOL:inst1|COMPARADORPROJETO:inst"
+Warning (275011): Block or symbol "Corretor_0" of instance "inst5" overlaps another block or symbol
+Info (12128): Elaborating entity "Mux1bit" for hierarchy "AluFinal:inst|ALU_BOOL:inst1|COMPARADORPROJETO:inst|Mux1bit:inst2"
+Info (12128): Elaborating entity "Block7" for hierarchy "AluFinal:inst|ALU_BOOL:inst1|COMPARADORPROJETO:inst|Block7:inst1"
+Info (12128): Elaborating entity "Corretor_0" for hierarchy "AluFinal:inst|ALU_BOOL:inst1|COMPARADORPROJETO:inst|Corretor_0:inst5"
+Info (12128): Elaborating entity "COMPARADOR" for hierarchy "AluFinal:inst|ALU_BOOL:inst1|COMPARADORPROJETO:inst|COMPARADOR:inst"
+Info (12128): Elaborating entity "Mux_ALu" for hierarchy "AluFinal:inst|Mux_ALu:inst7"
+Info (12128): Elaborating entity "Mux6bits" for hierarchy "AluFinal:inst|Mux_ALu:inst7|Mux6bits:inst1"
+Info (12128): Elaborating entity "ANDbitabit" for hierarchy "AluFinal:inst|ANDbitabit:inst6"
+Info (12128): Elaborating entity "Compa2Final" for hierarchy "AluFinal:inst|Compa2Final:inst2"
+Warning (275008): Primitive "GND" of instance "inst3" not used
+Info (12128): Elaborating entity "compa2" for hierarchy "AluFinal:inst|Compa2Final:inst2|compa2:inst"
+Info (12128): Elaborating entity "adder5bits" for hierarchy "AluFinal:inst|Compa2Final:inst2|compa2:inst|adder5bits:inst2"
+Info (12128): Elaborating entity "fulladder" for hierarchy "AluFinal:inst|Compa2Final:inst2|compa2:inst|adder5bits:inst2|fulladder:inst4"
+Info (12128): Elaborating entity "not5" for hierarchy "AluFinal:inst|Compa2Final:inst2|compa2:inst|not5:inst"
+Info (12128): Elaborating entity "LPM_CONSTANT" for hierarchy "AluFinal:inst|Compa2Final:inst2|compa2:inst|LPM_CONSTANT:inst567"
+Info (12130): Elaborated megafunction instantiation "AluFinal:inst|Compa2Final:inst2|compa2:inst|LPM_CONSTANT:inst567"
+Info (12133): Instantiated megafunction "AluFinal:inst|Compa2Final:inst2|compa2:inst|LPM_CONSTANT:inst567" with the following parameter:
+    Info (12134): Parameter "LPM_CVALUE" = "1"
+    Info (12134): Parameter "LPM_WIDTH" = "5"
+Info (12128): Elaborating entity "Alu_Adder" for hierarchy "AluFinal:inst|Alu_Adder:inst"
+Info (12128): Elaborating entity "alu" for hierarchy "AluFinal:inst|Alu_Adder:inst|alu:inst"
+Warning (275011): Block or symbol "GND" of instance "inst12" overlaps another block or symbol
+Warning (275011): Block or symbol "GND" of instance "inst2" overlaps another block or symbol
+Warning (275008): Primitive "GND" of instance "inst12" not used
+Warning (275008): Primitive "GND" of instance "inst18" not used
+Warning (275008): Primitive "GND" of instance "inst2" not used
+Warning (275008): Primitive "GND" of instance "inst8" not used
+Warning (275008): Primitive "GND" of instance "inst9" not used
+Info (12128): Elaborating entity "adder4bits" for hierarchy "AluFinal:inst|Alu_Adder:inst|alu:inst|adder4bits:inst24"
+Info (12128): Elaborating entity "Mux4bits" for hierarchy "AluFinal:inst|Alu_Adder:inst|alu:inst|Mux4bits:inst7"
+Info (12128): Elaborating entity "DecoderSinal" for hierarchy "AluFinal:inst|Alu_Adder:inst|alu:inst|DecoderSinal:inst4"
+Warning (275008): Primitive "GND" of instance "inst10" not used
+Info (12128): Elaborating entity "Compa24bits" for hierarchy "AluFinal:inst|Alu_Adder:inst|alu:inst|Compa24bits:inst5"
+Info (12128): Elaborating entity "LPM_CONSTANT" for hierarchy "AluFinal:inst|Alu_Adder:inst|alu:inst|Compa24bits:inst5|LPM_CONSTANT:inst567"
+Info (12130): Elaborated megafunction instantiation "AluFinal:inst|Alu_Adder:inst|alu:inst|Compa24bits:inst5|LPM_CONSTANT:inst567"
+Info (12133): Instantiated megafunction "AluFinal:inst|Alu_Adder:inst|alu:inst|Compa24bits:inst5|LPM_CONSTANT:inst567" with the following parameter:
+    Info (12134): Parameter "LPM_CVALUE" = "1"
+    Info (12134): Parameter "LPM_WIDTH" = "4"
+Info (12128): Elaborating entity "CorretorZeroCompact" for hierarchy "AluFinal:inst|Alu_Adder:inst|CorretorZeroCompact:inst3"
+Info (12128): Elaborating entity "CorretorZero" for hierarchy "AluFinal:inst|Alu_Adder:inst|CorretorZeroCompact:inst3|CorretorZero:inst"
+Info (12128): Elaborating entity "Subtrator" for hierarchy "AluFinal:inst|Subtrator:inst10"
+Info (12128): Elaborating entity "inversorsinal" for hierarchy "AluFinal:inst|Subtrator:inst10|inversorsinal:inst4"
+Info (12128): Elaborating entity "Xorbitabit" for hierarchy "AluFinal:inst|Xorbitabit:inst3"
+Info (12128): Elaborating entity "7Segmentos4bits" for hierarchy "7Segmentos4bits:inst1"
+Info (12128): Elaborating entity "7Segmentos-2" for hierarchy "7Segmentos4bits:inst1|7Segmentos-2:inst"
+Warning (275008): Primitive "NOT" of instance "inst37" not used
+Info (12128): Elaborating entity "display" for hierarchy "7Segmentos4bits:inst1|display:inst2"
+Info (12128): Elaborating entity "7Segmentos5bits" for hierarchy "7Segmentos5bits:inst3"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "pin_name1" is stuck at VCC
+    Warning (13410): Pin "pin_name5" is stuck at GND
+    Warning (13410): Pin "pin_name6" is stuck at GND
+    Warning (13410): Pin "pin_name15" is stuck at VCC
+    Warning (13410): Pin "pin_name19" is stuck at GND
+    Warning (13410): Pin "pin_name20" is stuck at GND
+    Warning (13410): Pin "pin_name34" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 165 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 13 input pins
+    Info (21059): Implemented 68 output pins
+    Info (21061): Implemented 84 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 20 warnings
+    Info: Peak virtual memory: 558 megabytes
+    Info: Processing ended: Wed Jan 29 16:00:16 2025
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:02
+
+
